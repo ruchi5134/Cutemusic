@@ -13,7 +13,7 @@ from tpx.utils.exceptions import AssistantErr
 from tpx.utils.inline import aq_markup, close_markup, stream_markup
 from tpx.utils.pastebin import toxicBin
 from tpx.utils.stream.queue import put_queue, put_queue_index
-from tpx.utils.thumbnails import get_thumb
+from tpx.utils.thumbnails import gen_thumb
 
 
 async def stream(
