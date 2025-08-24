@@ -21,7 +21,7 @@ from tpx.utils.decorators.language import languageCB
 from tpx.utils.formatters import seconds_to_min
 from tpx.utils.inline import close_markup, stream_markup, stream_markup_timer
 from tpx.utils.stream.autoclear import auto_clean
-from tpx.utils.thumbnails import get_thumb
+from tpx.utils.thumbnails import gen_thumb
 from config import (
     BANNED_USERS,
     SUPPORT_CHAT,
@@ -395,3 +395,4 @@ async def markup_timer():
 
 
 asyncio.create_task(markup_timer())
+
