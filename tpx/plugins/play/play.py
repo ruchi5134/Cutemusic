@@ -1,4 +1,4 @@
-port random
+import random
 import string
 
 from pyrogram import filters
@@ -661,3 +661,4 @@ async def slider_queries(client, CallbackQuery, _):
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
+
