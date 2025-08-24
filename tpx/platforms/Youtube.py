@@ -56,7 +56,7 @@ class YouTubeAPI:
     @staticmethod
     def get_cookie_file() -> Optional[str]:
         """Get a random cookie file from the 'cookies' directory."""
-        cookie_dir = "tpx/cookies"
+        cookie_dir = "tpx/cookies/Cookies.txt"
         try:
             if not os.path.exists(cookie_dir):
                 LOGGER(__name__).warning("Cookie directory '%s' does not exist.", cookie_dir)
