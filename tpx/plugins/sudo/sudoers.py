@@ -7,10 +7,10 @@ from tpx.utils.database import add_sudo, remove_sudo
 from tpx.utils.decorators.language import language
 from tpx.utils.extraction import extract_user
 from tpx.utils.inline import close_markup
-from config import BANNED_USERS, TOXIC, OWNER_ID
+from config import BANNED_USERS, OWNER_ID
 
 
-@app.on_message(filters.command(["addsudo"]) & filters.user(TOXIC))
+@app.on_message(filters.command(["addsudo"]) & filters.user(OWNER_ID))
 @language
 async def useradd(client, message: Message, _):
     if not message.reply_to_message:
@@ -27,7 +27,7 @@ async def useradd(client, message: Message, _):
         await message.reply_text(_["sudo_8"])
 
 
-@app.on_message(filters.command(["delsudo", "rmsudo"]) & filters.user(TOXIC))
+@app.on_message(filters.command(["delsudo", "rmsudo"]) & filters.user(OWNER_ID))
 @language
 async def userdel(client, message: Message, _):
     if not message.reply_to_message:
@@ -69,4 +69,5 @@ async def sudoers_list(client, message: Message, _):
         await message.reply_text(_["sudo_7"])
     else:
         await message.reply_text(text, reply_markup=close_markup(_))
+
 
