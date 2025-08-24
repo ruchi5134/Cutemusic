@@ -9,7 +9,7 @@ from tpx.utils.database import get_loop
 from tpx.utils.decorators import AdminRightsCheck
 from tpx.utils.inline import close_markup, stream_markup
 from tpx.utils.stream.autoclear import auto_clean
-from tpx.utils.thumbnails import get_thumb
+from tpx.utils.thumbnails import gen_thumb
 from config import BANNED_USERS
 
 
@@ -230,3 +230,4 @@ async def skip(cli, message: Message, _, chat_id):
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
+
